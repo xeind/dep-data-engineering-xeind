@@ -1,166 +1,49 @@
-# DEP Data Engineering Starter Kit
+# 1960 vs 2025: Who Had It Better?
 
-Welcome to the **Data Engineering Pilipinas Open Track**. This folder is your project scaffold — everything you need to build one real, deployable data project over 24 weeks.
+## Thought Process
 
----
+I'm still figuring out what exactly I want to build. But here's where my head is at.
 
-## Before You Start
+Johnny Harris did this thing - [1955 vs 2025: Who had it better in the US?](https://www.youtube.com/watch?v=J4qqIJ312zI). He stacked decades of data on GDP, wages, housing, inflation, and asked: did life actually improve? Simple format. No 30-dropdown dashboards. Just a question and the numbers.
 
-You need:
-- A free [GitHub account](https://github.com)
-- [Python 3.10+](https://www.python.org/downloads/) installed on your machine
-- [Git](https://git-scm.com/) installed and configured
+Every older Filipino I know says the same thing: *"Dati, mas madali ang buhay."* My grandparents. The tindera sa kanto. Every tito at the family reunion talking about how his first salary bought a full week of groceries and may sukli pa. *"Kami noon, nakabili na ng bahay at lupa sa first job pa lang."* *"Kayo kasi, ang lapit lang naka-Grab pa."* Before, life was easier. Pero totoo ba? Or is that just nostalgia with a side of *"kayo kasi, puro kayo Grab at Shopee"*?
 
----
+So I started pulling data. World Bank API goes back to 1960 for the Philippines. GDP, life expectancy, inflation, inequality, remittances, internet access. And now I'm wondering: **could you actually build one timeline that lets you see Filipino quality of life unfold across 65 years?**
 
-## Step 1 — Copy This Starter Kit to Your GitHub
+What I'm imagining: zoom into any year - 1980, 1997, 2010 - and see what life looked like. GDP was X. Life expectancy was Y. A jeepney ride cost Z. OFW remittances were surging (or not yet). The internet was still a decade away. Martial Law just ended (or was still happening). Toggle between presidencies. Compare Marcos Sr.'s GDP numbers against Cory's. Turn on Internet Era and watch what changed after 1994. Turn on OFW Boom and see remittances track against GDP.
 
-You have two options:
+The graph would be one 65-year timeline with layers you can toggle: GDP as the default line, then overlay life expectancy, inflation, inequality. Color-coded presidency bands in the background. Event markers for Martial Law, EDSA, Asian Financial Crisis, COVID. Era toggles that gray out sections of the timeline so you can see "before internet" vs "after internet" side by side.
 
-**Option A — Use This Repo as a Template (recommended)**
+I don't know if I can get all the data I want. Land prices from 1970? Probably not. What a jeepney ride cost in 1985? Unlikely. But maybe I can paint enough of the picture with what World Bank gives me: 11 indicators, 65 years, free. And if the gaps are honest and transparent, that's still a story worth telling.
 
-1. Go to the top of this GitHub repo and click **Use this template → Create a new repository**
-2. Name it something like `dep-data-engineering-<your-name>`
-3. Set it to **Public** (required for milestone submission)
-4. Click **Create repository**
+The question I keep coming back to: **did the average Filipino's life actually get better?** Not just GDP. The whole picture. Health. Education. Opportunity. For whom?
 
-**Option B — Fork and Copy Manually**
-
-1. Fork this repo to your account
-2. In your fork, delete everything outside of `cohorts/starter-kit/` and restructure the contents as your root
-
-> Your repo must be **public** at all times so reviewers and the auto-checker can access it. Do not make it private at any point during the program — even temporarily. If your repo is private when you submit, the auto-check will fail and your submission will not be reviewed.
+I'm not sure yet. That's what the project is supposed to figure out.
 
 ---
 
-## Step 2 — Clone Your Repo Locally
+## Problem Statement
 
-```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
-```
+I want to answer: "**Did the average Filipino's life actually get better between 1960 and 2025?**"
 
----
+Not just "did GDP go up" (it did - pero *sino ang yumaman?*). Did the things that matter - health, education, purchasing power, the ability to actually afford rent and still have savings - improve at the same pace? Or did the line go up for the top 1% and stay flat for everyone else?
 
-## Step 3 — Understand the Folder Structure
+## Audience
 
-```
-your-repo/
-├── data/
-│   ├── raw/            ← Phase 2: raw data files go here
-│   └── processed/      ← Phase 3: cleaned/transformed data goes here
-├── scripts/
-│   ├── ingest.py       ← Phase 2: your data ingestion script
-│   └── transform.py    ← Phase 3: your data transformation script
-├── notebooks/          ← Phase 4 & 5: your analysis notebooks
-├── output/
-│   └── figures/        ← Phase 4: saved charts and visuals
-├── dashboard/
-│   └── index.html      ← Phase 6: your deployed dashboard or report
-├── requirements.txt    ← list all your Python dependencies here
-└── README.md           ← this file — update it as your project grows
-```
+This project is for **Filipinos wondering if progress is real**. Anyone asking whether their parents had it easier, whether it's still worth having kids *in this economy*, or whether *"mahirap na talaga ngayon"* is a feeling or a fact. Your tito at the family reunion who won't stop talking about how ₱100 used to feed a whole barangay. The fresh grad deciding between staying in PH or taking that JO abroad. The OFW parent asking if the sacrifice was worth it. Basically: anyone who has ever looked at a payslip and thought *"saan napupunta yung tax ko?"*
 
-You will fill in each folder phase by phase. Do not try to fill everything at once.
+## KPI or Key Metric
 
----
+The main metric I want to track is **Real GDP per capita over time**. But GDP alone is lazy. I want to also look at life expectancy, inflation, inequality (Gini), remittance dependency, school enrollment, and household spending. No single number tells the whole story. The dashboard should let people toggle between them.
 
-## Step 4 — Set Up Your Python Environment
+## Likely Data Source
 
-```bash
-python -m venv venv
-source venv/bin/activate        # Mac/Linux
-venv\Scripts\activate           # Windows
+I will explore the **World Bank API** (https://api.worldbank.org/v2/country/PH) - free, no key, confirmed working. Provides GDP, life expectancy, inflation, population, unemployment, school enrollment, inequality (Gini), remittances, health spending, and household consumption. Earliest data from 1960.
 
-pip install -r requirements.txt
-```
+Some questions (land affordability, food prices by commodity, rent-to-income ratio) may need fallback sources. PSA has this data but their site is blocked. Still investigating alternatives.
 
-Add any new packages you install to `requirements.txt`:
+## Possible Final Dashboard
 
-```bash
-pip freeze > requirements.txt
-```
+The dashboard should let someone explore their own question. One 65-year timeline as the base. GDP is the default line. Toggle on life expectancy. Toggle on inflation. Presidential eras appear as background bands. Event markers for recessions and crises. Era toggles: click "Internet Era" and the pre-1994 section grays out. Click "OFW Boom" and watch remittance lines against GDP. Pick any year - see what life was like. Pick two presidencies - see which had better numbers.
 
----
-
-## Step 5 — Work Through the Phases
-
-| Phase | Weeks | What you build |
-|-------|-------|----------------|
-| 1 — Foundations | 1–4 | Define your problem, find your data source, set up this repo |
-| 2 — Data Collection | 5–6 | Write `scripts/ingest.py`, pull raw data into `data/raw/` |
-| 3 — Data Processing | 7–12 | Write `scripts/transform.py`, clean and model data in `data/processed/` |
-| 4 — Analysis & Insights | 13–16 | Explore data in `notebooks/`, produce charts in `output/figures/` |
-| 5 — Predictive / Alt Track | 17–20 | Build a model (Path A) or advanced analysis (Path B) |
-| 6 — Deployment | 21–24 | Deploy `dashboard/index.html` via GitHub Pages, prepare your demo |
-
----
-
-## Step 6 — Submit at Each Milestone
-
-At the end of each phase, submit a milestone issue on the **curriculum repo**:
-
-1. Go to [github.com/dataengineeringpilipinas/dep-data-engineering-open-track/issues/new/choose](https://github.com/dataengineeringpilipinas/dep-data-engineering-open-track/issues/new/choose)
-2. Select the template matching your milestone (e.g. **Milestone 1 — Foundations Complete**)
-3. Fill in your name, cohort, repo URL, and **commit hash**
-
-**How to get your commit hash:**
-
-```bash
-git log --oneline -1
-# Example output: a1b2c3d feat: add ingestion script
-# Your commit hash is: a1b2c3d (or the full 40-character version)
-```
-
-Copy the full hash:
-
-```bash
-git log -1 --format="%H"
-```
-
-After you submit, the auto-checker will run and post a comment on your issue within a few minutes. Fix anything flagged before waiting for a reviewer.
-
----
-
-## Step 7 — Enable GitHub Pages (Phase 6)
-
-To deploy your dashboard:
-
-1. In your repo, go to **Settings → Pages**
-2. Under **Source**, select **Deploy from a branch**
-3. Choose `main` branch and `/dashboard` folder
-4. Click **Save** — your live URL will appear as `https://<your-username>.github.io/<your-repo-name>/`
-
----
-
-## Updating Your README
-
-Replace this file with your own project README as you progress. At minimum, your README should include:
-
-- What problem you are solving
-- Where your data comes from
-- How to run your scripts (`ingest.py`, `transform.py`)
-- Your key findings (Phase 4+)
-- Your live dashboard URL (Phase 6)
-
----
-
-## Getting Help
-
-- Check the weekly READMEs in the curriculum repo for topic guides and resources
-- Post in the community Discord if you are stuck after 2 hours on a problem
-- Review `docs/FAQ.md` in the curriculum repo for common questions
-
----
-
-## Milestone Quick Reference
-
-| Milestone | When | What reviewers check |
-|-----------|------|---------------------|
-| M0 | Week 1 | Repo is public, README describes your project |
-| M1 | Week 3–4 | Folder structure exists, requirements.txt present |
-| M2 | Week 6 | `ingest.py` runs, `data/raw/` has real data |
-| M3 | Week 12 | `transform.py` runs, `data/processed/` has output |
-| M4 | Week 16 | Notebook exists and runs end-to-end |
-| M5 | Week 20 | Pipeline is connected, path-specific outputs saved |
-| M6 | Week 24 | Dashboard is live at a public URL |
+The point: not a dashboard with 30 charts. One timeline with smart layers that let people ask their own questions.
