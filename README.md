@@ -95,6 +95,41 @@ I will explore the **World Bank API** (https://api.worldbank.org/v2/country/PH) 
 
 Some questions (land affordability, food prices by commodity, rent-to-income ratio) may need fallback sources. PSA has this data but their site is blocked. Still investigating alternatives.
 
+## Data Source Notes
+
+### Primary Source
+
+- **Name:** World Bank API - Philippines country indicators
+- **URL:** https://api.worldbank.org/v2/country/PH/indicator/{CODE}?format=json
+- **Format:** JSON API
+- **Coverage:** Philippines, annual data, mostly 1960-2024 depending on indicator
+- **Why it fits:** This can answer the long-term national question: did GDP, health, education, inequality, remittances, and household consumption improve over time?
+- **Known limitations:** World Bank can show the big-picture trend, but it does not fully answer lived affordability questions like rent, land prices, jeepney fares, tuition, or exact food-basket purchasing power.
+
+Useful starting indicators:
+
+| Indicator | World Bank Code | Why it matters |
+|---|---:|---|
+| GDP per capita, current US$ | `NY.GDP.PCAP.CD` | Main economic progress line |
+| GDP per capita, constant 2015 US$ | `NY.GDP.PCAP.KD` | Better for real growth over time |
+| Life expectancy | `SP.DYN.LE00.IN` | Health / survival progress |
+| Inflation | `FP.CPI.TOTL.ZG` | Price pressure |
+| Population | `SP.POP.TOTL` | Scale / context |
+| Unemployment | `SL.UEM.TOTL.ZS` | Job market signal |
+| School enrollment | `SE.PRM.ENRR` | Education access |
+| Gini index | `SI.POV.GINI` | Inequality |
+| Remittances, % of GDP | `BX.TRF.PWKR.DT.GD.ZS` | OFW dependency / support |
+| Health expenditure, % of GDP | `SH.XPD.CHEX.GD.ZS` | Health system investment |
+| Household consumption, % of GDP | `NE.CON.PRVT.ZS` | How much of the economy is household spending |
+
+### Fallback / Stretch Sources
+
+- **PSA / FIES / OpenStat:** Best candidate for household income, poverty threshold, wages, CPI, and possibly food-price or expenditure data. Main risk: access can be blocked or messy, so this is not the M0 dependency.
+- **BSP:** Possible source for remittances, exchange rates, inflation context, and housing price index. Main risk: some pages are difficult to access or routed through documents/SharePoint.
+- **Manual historical references:** Possible for jeepney fares, rice prices, tuition, or rent examples, but these need careful citation and should be treated as illustrative unless the source is consistent.
+
+For M0, World Bank is enough. For the full "who had it better?" version, the project should later add at least one affordability source so GDP can be compared against what Filipino households could actually buy.
+
 ## Possible Final Dashboard
 
 The dashboard should let someone explore their own question. One 65-year timeline as the base. GDP is the default line. Toggle on life expectancy. Toggle on inflation. Presidential eras appear as background bands. Event markers for recessions and crises. Era toggles: click "Internet Era" and the pre-1994 section grays out. Click "OFW Boom" and watch remittance lines against GDP. Pick any year - see what life was like. Pick two presidencies - see which had better numbers.
