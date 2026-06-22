@@ -36,6 +36,59 @@ This project is for **Filipinos wondering if progress is real**. Anyone asking w
 
 The main metric I want to track is **Real GDP per capita over time**. But GDP alone is lazy. I want to also look at life expectancy, inflation, inequality (Gini), remittance dependency, school enrollment, and household spending. No single number tells the whole story. The dashboard should let people toggle between them.
 
+## Comparison Approach
+
+The thing I want to copy from the Johnny Harris format is not the exact US metrics. It's the logic:
+
+> GDP says the country got richer. But did ordinary life actually get easier?
+
+So GDP per capita becomes the anchor line, then I compare it against lived-reality indicators. For the Philippines, that means asking questions like:
+
+- How many kilos of rice could one day of work buy?
+- Did household consumption improve as GDP grew?
+- Did inequality fall, or did growth mostly stay at the top?
+- Did remittances rise because life improved, or because families needed someone abroad to survive?
+- Did health and education outcomes improve enough to say life got better?
+
+The comparison needs two layers:
+
+1. **Official progress:** real GDP per capita over time.
+2. **Lived progress:** what a Filipino worker or household could actually afford, access, or survive through in the same year.
+
+If GDP rises but purchasing power, inequality, or remittance dependency gets worse, then the answer is not a clean "yes." It becomes: life improved in some ways, but not evenly and not for everyone.
+
+## Fair Comparison Notes
+
+I don't want to define "the average Filipino" carelessly because that can hide too much. A national average can blur class, region, household size, and whether a family has OFW income.
+
+So the first fair version should compare three profiles:
+
+1. **Minimum-wage worker** - useful for basic purchasing power: rice, transport, food, electricity, and other daily costs.
+2. **Middle-income household** - useful for the Harris-style lifestyle comparison: rent, food, education, healthcare, savings, and stability.
+3. **National average** - useful for macro indicators like GDP per capita, life expectancy, inflation, and household consumption.
+
+For a "middle-class Filipino," I should not define it by vibes. The cleanest approach is to use income position:
+
+- Prefer official household income data, like FIES income deciles or quintiles.
+- If I need a class threshold, use a poverty-threshold-based definition from Philippine policy research and clearly state the multiplier.
+- Keep household size explicit, probably a family of five when comparing against PSA-style poverty and income thresholds.
+
+Money should be adjusted into **constant pesos** so years are comparable. For now, **2024 pesos** makes the most sense because many confirmed indicators currently run through 2024. If reliable full-year 2025 CPI, wage, and price data are available later, I can switch to 2025 pesos.
+
+The basic conversion is:
+
+> value in 2024 pesos = historical value x (CPI in 2024 / CPI in historical year)
+
+For lifestyle comparisons, ratios may be more honest than raw pesos:
+
+- House price divided by annual household income
+- Monthly rent divided by monthly household income
+- Daily wage divided by price of 1 kg of rice
+- Food basket cost divided by monthly income
+- Health or out-of-pocket cost divided by income
+
+The question is not just "were prices lower before?" Of course they were. The better question is: **after adjusting for inflation and income, what could a Filipino household actually afford?**
+
 ## Likely Data Source
 
 I will explore the **World Bank API** (https://api.worldbank.org/v2/country/PH) - free, no key, confirmed working. Provides GDP, life expectancy, inflation, population, unemployment, school enrollment, inequality (Gini), remittances, health spending, and household consumption. Earliest data from 1960.
