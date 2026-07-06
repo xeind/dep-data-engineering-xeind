@@ -91,18 +91,18 @@ The question is not just "were prices lower before?" Of course they were. The be
 
 ## Likely Data Source
 
-I will explore the **World Bank API** (https://api.worldbank.org/v2/country/PH) - free, no key, confirmed working. Provides GDP, life expectancy, inflation, population, unemployment, school enrollment, inequality (Gini), remittances, health spending, and household consumption. Earliest data from 1960.
+My primary source is the **World Bank API** (https://api.worldbank.org/v2/country/PH), which is free, requires no API key, and provides Philippines indicators such as GDP per capita, life expectancy, inflation, population, unemployment, inequality, remittances, health spending, and household consumption from 1960 onward.
 
-Some questions (land affordability, food prices by commodity, rent-to-income ratio) may need fallback sources. PSA has this data but their site is blocked. Still investigating alternatives.
+My fallback source is the **Philippine Statistics Authority Family Income and Expenditure Survey (FIES)** (https://psa.gov.ph/statistics/income-expenditure/fies), which can support a narrower household affordability version of the project if the World Bank data is too broad for lived-cost analysis.
 
 ## Data Source Notes
 
 ### Primary Source
 
 - **Name:** World Bank API - Philippines country indicators
-- **URL:** https://api.worldbank.org/v2/country/PH/indicator/{CODE}?format=json
+- **URL:** https://api.worldbank.org/v2/country/PH/indicator/NY.GDP.PCAP.KD?format=json&per_page=100
 - **Format:** JSON API
-- **Coverage:** Philippines, annual data, mostly 1960-2024 depending on indicator
+- **Coverage:** Philippines, annual data, 1960-2024 for the main time-series, with some indicators starting later
 - **Why it fits:** This can answer the long-term national question: did GDP, health, education, inequality, remittances, and household consumption improve over time?
 - **Known limitations:** World Bank can show the big-picture trend, but it does not fully answer lived affordability questions like rent, land prices, jeepney fares, tuition, or exact food-basket purchasing power.
 
@@ -122,13 +122,16 @@ Useful starting indicators:
 | Health expenditure, % of GDP | `SH.XPD.CHEX.GD.ZS` | Health system investment |
 | Household consumption, % of GDP | `NE.CON.PRVT.ZS` | How much of the economy is household spending |
 
-### Fallback / Stretch Sources
+### Fallback Source
 
-- **PSA / FIES / OpenStat:** Best candidate for household income, poverty threshold, wages, CPI, and possibly food-price or expenditure data. Main risk: access can be blocked or messy, so this is not the M0 dependency.
-- **BSP:** Possible source for remittances, exchange rates, inflation context, and housing price index. Main risk: some pages are difficult to access or routed through documents/SharePoint.
-- **Manual historical references:** Possible for jeepney fares, rice prices, tuition, or rent examples, but these need careful citation and should be treated as illustrative unless the source is consistent.
+- **Name:** Philippine Statistics Authority Family Income and Expenditure Survey (FIES)
+- **URL:** https://psa.gov.ph/statistics/income-expenditure/fies
+- **Format:** Official PSA statistical release pages with downloadable household survey tables/files
+- **Coverage:** Philippines household income and expenditure survey data, nationwide, reported by survey round instead of a full annual API series
+- **Why it could still work:** If the World Bank API is too macro-level for the affordability question, FIES can still support a narrower version of the project focused on household income, spending, and living-standard trends.
+- **Known limitations:** The PSA site is currently blocked by a Cloudflare challenge from this environment, the survey is less frequent than the World Bank annual series, and the files may need manual download and cleaning.
 
-For M0, World Bank is enough. For the full "who had it better?" version, the project should later add at least one affordability source so GDP can be compared against what Filipino households could actually buy.
+For Week 2, my committed plan is: **primary source = World Bank API**, **fallback source = PSA FIES**.
 
 ## Possible Final Dashboard
 
