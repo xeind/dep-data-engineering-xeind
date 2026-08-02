@@ -133,6 +133,22 @@ Useful starting indicators:
 
 For Week 2, my committed plan is: **primary source = World Bank API**, **fallback source = PSA FIES**.
 
+## How To Run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python scripts/ingest.py   # pull raw JSON from the World Bank API
+```
+
+`ingest.py` fetches the 12 indicators listed in `scripts/indicators.py`
+(Philippines, 1960-2025) with retries, backoff, and pagination, and writes one
+snapshot to `data/raw/world_bank_ph_indicators.json`. The snapshot records the
+request URLs and pull timestamp, and is committed, so the raw data can be
+inspected without hitting the API. Source details: `docs/DATA-SOURCES.md`.
+
 ## Possible Final Dashboard
 
 The dashboard should let someone explore their own question. One 65-year timeline as the base. GDP is the default line. Toggle on life expectancy. Toggle on inflation. Presidential eras appear as background bands. Event markers for recessions and crises. Era toggles: click "Internet Era" and the pre-1994 section grays out. Click "OFW Boom" and watch remittance lines against GDP. Pick any year - see what life was like. Pick two presidencies - see which had better numbers.
