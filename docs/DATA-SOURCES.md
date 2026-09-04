@@ -16,19 +16,24 @@
 
 ### Selected indicators
 
+Defined once in `scripts/indicators.py`, which is the single source of
+truth. `ingest.py`, `transform.py`, and this table all read from it, so the
+count cannot drift again.
+
 | # | Code | Indicator | Typical coverage | Why it matters |
 |---|---|---|---|---|
 | 1 | `NY.GDP.PCAP.CD` | GDP per capita, current US$ | 1960-2024 | Headline economic growth |
 | 2 | `NY.GDP.PCAP.KD` | GDP per capita, constant 2015 US$ | 1960-2024 | Real growth over time |
-| 3 | `SP.DYN.LE00.IN` | Life expectancy at birth | 1960-2023 | Health and survival |
-| 4 | `FP.CPI.TOTL.ZG` | Inflation, consumer prices | 1960-2024 | Cost pressure |
-| 5 | `SP.POP.TOTL` | Population, total | 1960-2024 | National context |
-| 6 | `SL.UEM.TOTL.ZS` | Unemployment, total | 1991-2024 | Labor market signal |
-| 7 | `SE.PRM.ENRR` | School enrollment, primary | 1971-2023 | Education access |
-| 8 | `SI.POV.GINI` | Gini index | 1985-2023 | Inequality |
-| 9 | `BX.TRF.PWKR.DT.GD.ZS` | Personal remittances, received (% of GDP) | 1977-2024 | OFW dependency and support |
-| 10 | `SH.XPD.CHEX.GD.ZS` | Current health expenditure (% of GDP) | 2000-2023 | Health system investment |
-| 11 | `NE.CON.PRVT.ZS` | Household final consumption expenditure (% of GDP) | 1960-2024 | Household spending share |
+| 3 | `NY.GNP.PCAP.KD` | GNI per capita, constant 2015 US$ | 1960-2025 | Income kept by residents, not just output |
+| 4 | `SP.DYN.LE00.IN` | Life expectancy at birth | 1960-2024 | Health and survival |
+| 5 | `FP.CPI.TOTL.ZG` | Inflation, consumer prices | 1960-2024 | Cost pressure |
+| 6 | `SP.POP.TOTL` | Population, total | 1960-2024 | National context |
+| 7 | `SL.UEM.TOTL.ZS` | Unemployment, total | 1991-2024 | Labor market signal |
+| 8 | `SE.PRM.ENRR` | School enrollment, primary | 1971-2023 | Education access |
+| 9 | `SI.POV.GINI` | Gini index | 1985-2023 | Inequality |
+| 10 | `BX.TRF.PWKR.DT.GD.ZS` | Personal remittances, received (% of GDP) | 1977-2024 | OFW dependency and support |
+| 11 | `SH.XPD.CHEX.GD.ZS` | Current health expenditure (% of GDP) | 2000-2023 | Health system investment |
+| 12 | `NE.CON.PRVT.ZS` | Household final consumption expenditure (% of GDP) | 1960-2024 | Household spending share |
 
 ### Why it fits the project
 
