@@ -83,6 +83,10 @@ in query 02 because that calculation needs 1959, which predates the dataset.
 
 ## Companion file
 
+`data/processed/cleaning-report.json` records, per column, the observed and
+missing counts, the observed span, the dtype, the exact missing years, and the
+documented reason for the gap. It is generated, never hand-edited.
+
 `data/processed/indicators.json` holds the same table shaped for the
 dashboard: a `meta` block (source, pull timestamp, price base year, column
 labels and units), a `years` array, and one array per column with `null` for

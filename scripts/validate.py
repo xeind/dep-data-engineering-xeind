@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from indicators import ANCHOR, END_YEAR, INDICATORS, START_YEAR
+from indicators import ANCHOR, END_YEAR, GAP_REASONS, INDICATORS, START_YEAR
 
 CSV_FILE = Path(__file__).resolve().parents[1] / "data" / "processed" / "indicators.csv"
 
@@ -66,6 +66,53 @@ def validate():
         "every registered indicator has a column",
         not missing,
         f"missing: {sorted(missing)}" if missing else "",
+    )
+
+    # Types. The checklist asks for numbers as numbers; a single stray string
+    # in the source would turn a whole column to object dtype and break every
+    # chart downstream in a way range checks would never catch.
+    check(
+        results,
+        "year index is an integer type",
+        pd.api.types.is_integer_dtype(frame.index),
+        f"got {frame.index.dtype}",
+    )
+
+    wrong_type = [
+        column for column in frame.columns
+        if not pd.api.types.is_float_dtype(frame[column])
+    ]
+    check(
+        results,
+        "every value column is a float type",
+        not wrong_type,
+        f"not float: {wrong_type}" if wrong_type else "",
+    )
+
+    # Gaps are allowed, undocumented gaps are not. This is the checklist's
+    # "flagged with a reason" turned into something that actually fails.
+    undocumented = [
+        column for column in frame.columns
+        if frame[column].isna().any() and column not in GAP_REASONS
+    ]
+    check(
+        results,
+        "every column with gaps has a documented reason",
+        not undocumented,
+        f"undocumented: {undocumented}" if undocumented else "",
+    )
+
+    # And the reverse: a reason for a column that no longer has gaps is stale
+    # documentation, which is how the indicator count drifted before.
+    stale = [
+        column for column in GAP_REASONS
+        if column in frame.columns and not frame[column].isna().any()
+    ]
+    check(
+        results,
+        "no stale gap reasons",
+        not stale,
+        f"documented but complete: {stale}" if stale else "",
     )
 
     for column in REQUIRED_COLUMNS:

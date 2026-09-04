@@ -29,6 +29,23 @@ INDICATORS = {
 # every other column exists to test whether ordinary life kept pace.
 ANCHOR = "gdp_per_capita_const"
 
+# Why each sparse column is sparse. Every gap in the processed table is a year
+# the source never measured, so each one needs a stated reason rather than an
+# imputed value. validate.py fails if a column has gaps and no entry here,
+# which stops an undocumented gap reaching analysis.
+GAP_REASONS = {
+    "life_expectancy": "Published on a longer lag than the economic series; no 2025 value yet.",
+    "unemployment": "ILO-modelled estimate; the World Bank does not publish it before 1991.",
+    "school_enrollment": "Reported irregularly by the education ministry, with gaps within the span.",
+    "gini": "Household surveys run roughly every 3 years; no Philippine figure exists before 1985.",
+    "remittances": "Balance-of-payments reporting of worker remittances begins in 1977.",
+    "health_expenditure": "The World Bank health accounts series does not extend before 2000.",
+    "household_consumption": "National accounts detail is unavailable before 1981.",
+    # Derived columns lose their first year by construction, not by missing data.
+    "gdp_growth_pct": "Year-over-year change, so 1960 has no prior year to compare against.",
+    "life_expectancy_gain": "Derived from life_expectancy and inherits its missing 2025 value.",
+}
+
 
 def column_name(code):
     return INDICATORS[code][0]

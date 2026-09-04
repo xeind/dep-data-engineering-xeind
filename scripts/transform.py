@@ -2,8 +2,9 @@
 Turn the raw World Bank snapshot into one analysis-ready table.
 
 Reads  : data/raw/world_bank_ph_indicators.json
-Writes : data/processed/indicators.csv   (wide, one row per year)
-         data/processed/indicators.json  (same data, shaped for the dashboard)
+Writes : data/processed/indicators.csv      (wide, one row per year)
+         data/processed/indicators.json     (same data, shaped for the dashboard)
+         data/processed/cleaning-report.json (per-column coverage and gap reasons)
 
 Run: python scripts/transform.py   (after scripts/ingest.py)
 """
@@ -14,13 +15,14 @@ from pathlib import Path
 
 import pandas as pd
 
-from indicators import ANCHOR, END_YEAR, INDICATORS, START_YEAR
+from indicators import ANCHOR, END_YEAR, GAP_REASONS, INDICATORS, START_YEAR
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_FILE = ROOT / "data" / "raw" / "world_bank_ph_indicators.json"
 PROCESSED_DIR = ROOT / "data" / "processed"
 CSV_FILE = PROCESSED_DIR / "indicators.csv"
 JSON_FILE = PROCESSED_DIR / "indicators.json"
+REPORT_FILE = PROCESSED_DIR / "cleaning-report.json"
 
 # Money is expressed in constant pesos of this year, per the project's
 # fair-comparison rule. 2024 is the last year with a full inflation figure.
@@ -104,6 +106,41 @@ def to_dashboard_json(frame, snapshot):
     return payload
 
 
+def to_cleaning_report(frame):
+    """Per-column coverage, with a stated reason for every gap.
+
+    Nothing is imputed, so a gap is a fact about the source, not a defect in
+    the table. Writing the reasons out beside the counts means the claim
+    "missing values are flagged with a reason" can be checked by a machine
+    instead of taken on trust from prose.
+    """
+    columns = {}
+    for column in frame.columns:
+        observed = frame[column].notna()
+        years = frame.index[observed]
+        missing = frame.index[~observed]
+        entry = {
+            "observed": int(observed.sum()),
+            "missing": int((~observed).sum()),
+            "first_year": int(years.min()) if len(years) else None,
+            "last_year": int(years.max()) if len(years) else None,
+            "dtype": str(frame[column].dtype),
+        }
+        if len(missing):
+            entry["missing_years"] = [int(year) for year in missing]
+            entry["reason"] = GAP_REASONS.get(column, "UNDOCUMENTED")
+        columns[column] = entry
+
+    return {
+        "policy": "No imputation, no smoothing, no outlier removal. "
+                  "Every empty cell is a year the source did not measure.",
+        "rows": int(len(frame)),
+        "columns": len(frame.columns),
+        "complete_columns": sum(1 for c in columns.values() if c["missing"] == 0),
+        "per_column": columns,
+    }
+
+
 def transform():
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -116,9 +153,15 @@ def transform():
         encoding="utf-8",
     )
 
+    REPORT_FILE.write_text(
+        json.dumps(to_cleaning_report(frame), indent=2),
+        encoding="utf-8",
+    )
+
     print(f"{len(frame)} years x {len(frame.columns)} columns")
     print(f"  {CSV_FILE}")
     print(f"  {JSON_FILE}")
+    print(f"  {REPORT_FILE}")
     print("\nCoverage:")
     for column in frame.columns:
         observed = frame[column].notna()

@@ -36,6 +36,14 @@ not do, and which limitations any reader of the charts needs to know about.
 
 ## Known gaps and why they exist
 
+The reasons below are not prose written beside the data. They live in
+`GAP_REASONS` in `scripts/indicators.py`, get written into
+`data/processed/cleaning-report.json` on every transform, and are enforced by
+`validate.py`: a column with gaps and no reason fails the run, and a reason
+left behind for a column that filled in is reported as stale. That is what
+keeps this table from drifting away from the dataset.
+
+
 | Column | Gap | Why |
 |---|---|---|
 | `gini` | Only 14 points, 1985–2023 | Comes from household surveys run every ~3 years, not annually. There is no Philippine Gini before 1985 in this source. |
@@ -77,14 +85,15 @@ These belong in any honest reading of the charts.
 ```
 python scripts/ingest.py      # pull raw JSON from the World Bank API
 python scripts/transform.py   # build indicators.csv + indicators.json
-python scripts/validate.py    # 21 data quality checks, non-zero exit on failure
+python scripts/validate.py    # 25 data quality checks, non-zero exit on failure
 python scripts/query.py       # run sql/ against the processed table
 ```
 
-`validate.py` is the gate: it checks the year index is complete, every
-registered indicator has a column, the four core series each cover at least
-60 years, every value sits inside a plausible range, population only
-increases, and the CPI index rises monotonically and equals 100 in 2024.
+`validate.py` is the gate: it checks the year index is complete and integer
+typed, every value column is a float, every registered indicator has a column,
+the four core series each cover at least 60 years, every value sits inside a
+plausible range, population only increases, and the CPI index rises
+monotonically and equals 100 in 2024.
 
 `query.py` loads the processed CSV and the presidency lookup into an
 in-memory SQLite database, runs every file in `sql/`, and writes

@@ -146,7 +146,7 @@ Run the pipeline in this order. Each step reads what the previous one wrote.
 ```bash
 python scripts/ingest.py      # 1. pull raw JSON from the World Bank API
 python scripts/transform.py   # 2. build the clean dataset
-python scripts/validate.py    # 3. 21 data quality checks
+python scripts/validate.py    # 3. 25 data quality checks
 python scripts/query.py       # 4. answer the business questions in SQL
 ```
 
@@ -156,7 +156,7 @@ committed, so a reviewer can skip step 1 and still reproduce every number.
 | Step | Reads | Writes |
 |---|---|---|
 | `ingest.py` | World Bank API, 12 indicators, 1960–2025 | `data/raw/world_bank_ph_indicators.json` |
-| `transform.py` | the raw snapshot | `data/processed/indicators.csv`, `data/processed/indicators.json` |
+| `transform.py` | the raw snapshot | `data/processed/indicators.csv`, `data/processed/indicators.json`, `data/processed/cleaning-report.json` |
 | `validate.py` | the processed CSV | nothing; exits non-zero if a check fails |
 | `query.py` | the processed CSV + `data/reference/presidencies.csv` | `output/query-results.md` |
 
@@ -167,11 +167,16 @@ timestamp inside the snapshot. `transform.py` reshapes that into 66 years by
 chain that makes peso comparisons across 65 years honest. Both scripts
 produce byte-identical output on repeated runs.
 
-`validate.py` is the gate. It checks the year index is complete, every
-registered indicator has a column, the four core series each cover at least
-60 years, every value sits in a plausible range, population only ever
-increases, and the CPI index rises monotonically and equals 100 in its base
-year. All 21 checks currently pass.
+`validate.py` is the gate. It checks the year index is complete and typed as
+an integer, every value column is a float, every registered indicator has a
+column, the four core series each cover at least 60 years, every value sits in
+a plausible range, population only ever increases, and the CPI index rises
+monotonically and equals 100 in its base year.
+
+Two checks guard the documentation itself. Any column with gaps must have a
+stated reason in `scripts/indicators.py`, and any reason for a column that no
+longer has gaps is reported as stale. Gaps are allowed; undocumented gaps fail
+the build. All 25 checks currently pass.
 
 Details: [`docs/SCHEMA.md`](docs/SCHEMA.md),
 [`docs/CLEANING-NOTES.md`](docs/CLEANING-NOTES.md),
