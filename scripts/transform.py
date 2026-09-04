@@ -1,24 +1,133 @@
 """
-Phase 3 — Data Transformation
-Replace this template with your own transformation logic.
+Turn the raw World Bank snapshot into one analysis-ready table.
+
+Reads  : data/raw/world_bank_ph_indicators.json
+Writes : data/processed/indicators.csv   (wide, one row per year)
+         data/processed/indicators.json  (same data, shaped for the dashboard)
+
+Run: python scripts/transform.py   (after scripts/ingest.py)
 """
 
-import os
+import json
+import sys
+from pathlib import Path
 
-RAW_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
-PROCESSED_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "processed")
+import pandas as pd
+
+from indicators import ANCHOR, END_YEAR, INDICATORS, START_YEAR
+
+ROOT = Path(__file__).resolve().parents[1]
+RAW_FILE = ROOT / "data" / "raw" / "world_bank_ph_indicators.json"
+PROCESSED_DIR = ROOT / "data" / "processed"
+CSV_FILE = PROCESSED_DIR / "indicators.csv"
+JSON_FILE = PROCESSED_DIR / "indicators.json"
+
+# Money is expressed in constant pesos of this year, per the project's
+# fair-comparison rule. 2024 is the last year with a full inflation figure.
+PRICE_BASE_YEAR = 2024
+
+
+def load_snapshot():
+    if not RAW_FILE.exists():
+        raise SystemExit(f"{RAW_FILE} not found. Run scripts/ingest.py first.")
+    return json.loads(RAW_FILE.read_text(encoding="utf-8"))
+
+
+def to_wide(snapshot):
+    """One row per year, one column per indicator."""
+    frame = pd.DataFrame({"year": range(START_YEAR, END_YEAR + 1)}).set_index("year")
+
+    for code, payload in snapshot["indicators"].items():
+        column = payload["column"]
+        series = {
+            int(row["date"]): row["value"]
+            for row in payload["rows"]
+            if row.get("value") is not None
+        }
+        frame[column] = pd.Series(series, dtype="float64")
+
+    # Keep column order stable and matching the registry, not the JSON.
+    return frame[[column for column, _, _ in INDICATORS.values()]]
+
+
+def add_derived(frame):
+    """Columns the raw API does not give us but the project question needs."""
+    anchor = frame[ANCHOR]
+
+    # Real growth of the anchor line, year over year.
+    frame["gdp_growth_pct"] = anchor.pct_change() * 100
+
+    # Anchor indexed to the first year, so "how much richer since 1960" is
+    # readable without doing arithmetic in your head.
+    frame["gdp_index_1960"] = anchor / anchor.loc[START_YEAR] * 100
+
+    # Years of life gained since 1960 — the clearest "life got better" column.
+    life = frame["life_expectancy"]
+    frame["life_expectancy_gain"] = life - life.loc[START_YEAR]
+
+    # Cumulative price level built from annual inflation, rebased so that
+    # PRICE_BASE_YEAR = 100. This is what makes peso comparisons honest.
+    growth_factor = 1 + frame["inflation"] / 100
+    cpi = growth_factor.cumprod()
+    cpi = cpi / cpi.loc[PRICE_BASE_YEAR] * 100
+    frame[f"cpi_index_{PRICE_BASE_YEAR}"] = cpi
+
+    # What 100 pesos of that year's money is worth in PRICE_BASE_YEAR pesos.
+    # The tito-at-the-reunion column: "dati, ang ₱100 kaya bumili ng..."
+    frame[f"peso100_in_{PRICE_BASE_YEAR}_pesos"] = 100 * cpi.loc[PRICE_BASE_YEAR] / cpi
+
+    return frame
+
+
+def to_dashboard_json(frame, snapshot):
+    """Nulls instead of NaN, and a meta block the dashboard can render."""
+    payload = {
+        "meta": {
+            "title": "65 Years of Filipino Progress",
+            "range": f"{START_YEAR}-{END_YEAR}",
+            "source": snapshot["source"],
+            "pulled_at_utc": snapshot["pulled_at_utc"],
+            "price_base_year": PRICE_BASE_YEAR,
+            "anchor": ANCHOR,
+            "columns": {
+                payload["column"]: {"label": payload["name"], "unit": payload["unit"]}
+                for payload in snapshot["indicators"].values()
+            },
+        },
+        "years": [int(year) for year in frame.index],
+    }
+    for column in frame.columns:
+        payload[column] = [
+            None if pd.isna(value) else round(float(value), 4)
+            for value in frame[column]
+        ]
+    return payload
 
 
 def transform():
-    # TODO: replace with your transformation logic
-    # Examples:
-    #   - Load raw CSV, clean column names, drop nulls, save to processed/
-    #   - Run SQL queries against a local SQLite database
-    #   - Merge multiple raw files into one clean dataset
-    raise NotImplementedError("Add your transformation logic here.")
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+
+    snapshot = load_snapshot()
+    frame = add_derived(to_wide(snapshot))
+
+    frame.round(4).to_csv(CSV_FILE)
+    JSON_FILE.write_text(
+        json.dumps(to_dashboard_json(frame, snapshot), indent=1),
+        encoding="utf-8",
+    )
+
+    print(f"{len(frame)} years x {len(frame.columns)} columns")
+    print(f"  {CSV_FILE}")
+    print(f"  {JSON_FILE}")
+    print("\nCoverage:")
+    for column in frame.columns:
+        observed = frame[column].notna()
+        years = frame.index[observed]
+        span = f"{years.min()}-{years.max()}" if len(years) else "empty"
+        print(f"  {column:28s} {observed.sum():3d}/{len(frame)}  {span}")
+
+    return 0
 
 
 if __name__ == "__main__":
-    os.makedirs(PROCESSED_DATA_DIR, exist_ok=True)
-    transform()
-    print("Transformation complete. Check data/processed/ for output.")
+    sys.exit(transform())
