@@ -47,7 +47,7 @@ claim is unadjusted and meaningless.
 
 ## Missing values
 
-Empty cells are genuinely absent from the source, never imputed. See
+Empty cells are absent from the source, never imputed. See
 [CLEANING-NOTES.md](./CLEANING-NOTES.md) for why each gap exists and how
 analysis should treat it.
 
@@ -73,13 +73,13 @@ to whoever held office for **most** of it. Where a handover fell on 30 June
 and the split is even, the year goes to the **outgoing** president, because
 that year's national budget was enacted under them.
 
-This rule, not vibes, is why 1992 sits with Aquino rather than Ramos and 2016
+This rule is why 1992 sits with Aquino rather than Ramos and 2016
 with Aquino III rather than Duterte. Any comparison across administrations
 depends on it, so it is stated here rather than buried in a query.
 
-Two boundary years are worth naming: Marcos Sr. is credited 1966–1985 because
-he was deposed in February 1986, and Garcia's row has no total-change figure
-in query 02 because that calculation needs 1959, which predates the dataset.
+Marcos Sr. is credited 1966–1985 because he was deposed in February 1986.
+Garcia's row has no total-change figure in query 02 because that calculation
+needs 1959, which predates the dataset.
 
 ## Companion file
 

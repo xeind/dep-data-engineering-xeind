@@ -4,7 +4,7 @@
 
 I'm still figuring out what exactly I want to build. But here's where my head is at.
 
-Johnny Harris did this thing - [1955 vs 2025: Who had it better in the US?](https://www.youtube.com/watch?v=J4qqIJ312zI). He stacked decades of data on GDP, wages, housing, inflation, and asked: did life actually improve? Simple format. No 30-dropdown dashboards. Just a question and the numbers.
+Johnny Harris did this thing - [1955 vs 2025: Who had it better in the US?](https://www.youtube.com/watch?v=J4qqIJ312zI). He stacked decades of data on GDP, wages, housing, inflation, and asked: did life actually improve? The format is simple: one question and the numbers, no 30-dropdown dashboards.
 
 Every older Filipino I know says the same thing: *"Dati, mas madali ang buhay."* My grandparents. The tindera sa kanto. Every tito at the family reunion talking about how his first salary bought a full week of groceries and may sukli pa. *"Kami noon, nakabili na ng bahay at lupa sa first job pa lang."* *"Kayo kasi, ang lapit lang naka-Grab pa."* Before, life was easier. Pero totoo ba? Or is that just nostalgia with a side of *"kayo kasi, puro kayo Grab at Shopee"*?
 
@@ -14,9 +14,9 @@ What I'm imagining: zoom into any year - 1980, 1997, 2010 - and see what life lo
 
 The graph would be one 65-year timeline with layers you can toggle: GDP as the default line, then overlay life expectancy, inflation, inequality. Color-coded presidency bands in the background. Event markers for Martial Law, EDSA, Asian Financial Crisis, COVID. Era toggles that gray out sections of the timeline so you can see "before internet" vs "after internet" side by side.
 
-I don't know if I can get all the data I want. Land prices from 1970? Probably not. What a jeepney ride cost in 1985? Unlikely. But maybe I can paint enough of the picture with what World Bank gives me: 11 indicators, 65 years, free. And if the gaps are honest and transparent, that's still a story worth telling.
+I don't know if I can get all the data I want. Land prices from 1970? Probably not. What a jeepney ride cost in 1985? Unlikely. But maybe what World Bank gives me is enough: 11 indicators, 65 years, free. And if I'm upfront about the gaps, the project still works.
 
-The question I keep coming back to: **did the average Filipino's life actually get better?** Not just GDP. The whole picture. Health. Education. Opportunity. For whom?
+The question I keep coming back to: **did the average Filipino's life actually get better?** I mean more than GDP: health, education, opportunity, and who got them.
 
 I'm not sure yet. That's what the project is supposed to figure out.
 
@@ -26,19 +26,19 @@ I'm not sure yet. That's what the project is supposed to figure out.
 
 I want to answer: "**Did the average Filipino's life actually get better between 1960 and 2025?**"
 
-Not just "did GDP go up" (it did - pero *sino ang yumaman?*). Did the things that matter - health, education, purchasing power, the ability to actually afford rent and still have savings - improve at the same pace? Or did the line go up for the top 1% and stay flat for everyone else?
+GDP went up, pero *sino ang yumaman?* Did health, education, purchasing power, and the ability to actually afford rent and still have savings improve at the same pace? Or did the line go up for the top 1% and stay flat for everyone else?
 
 ## Audience
 
-This project is for **Filipinos wondering if progress is real**. Anyone asking whether their parents had it easier, whether it's still worth having kids *in this economy*, or whether *"mahirap na talaga ngayon"* is a feeling or a fact. Your tito at the family reunion who won't stop talking about how ₱100 used to feed a whole barangay. The fresh grad deciding between staying in PH or taking that JO abroad. The OFW parent asking if the sacrifice was worth it. Basically: anyone who has ever looked at a payslip and thought *"saan napupunta yung tax ko?"*
+This project is for **Filipinos wondering if progress is real**. Anyone asking whether their parents had it easier, whether it's still worth having kids *in this economy*, or whether *"mahirap na talaga ngayon"* is a feeling or a fact. Your tito at the family reunion who won't stop talking about how ₱100 used to feed a whole barangay. The fresh grad deciding between staying in PH or taking that JO abroad. The OFW parent asking if the sacrifice was worth it. Anyone who has ever looked at a payslip and thought *"saan napupunta yung tax ko?"*
 
 ## KPI or Key Metric
 
-The main metric I want to track is **Real GDP per capita over time**. But GDP alone is lazy. I want to also look at life expectancy, inflation, inequality (Gini), remittance dependency, school enrollment, and household spending. No single number tells the whole story. The dashboard should let people toggle between them.
+The main metric I want to track is **Real GDP per capita over time**. But GDP alone is lazy. I want to also look at life expectancy, inflation, inequality (Gini), remittance dependency, school enrollment, and household spending. The dashboard should let people toggle between them.
 
 ## Comparison Approach
 
-The thing I want to copy from the Johnny Harris format is not the exact US metrics. It's the logic:
+I want to copy the logic of the Johnny Harris format, not the exact US metrics:
 
 > GDP says the country got richer. But did ordinary life actually get easier?
 
@@ -55,7 +55,7 @@ The comparison needs two layers:
 1. **Official progress:** real GDP per capita over time.
 2. **Lived progress:** what a Filipino worker or household could actually afford, access, or survive through in the same year.
 
-If GDP rises but purchasing power, inequality, or remittance dependency gets worse, then the answer is not a clean "yes." It becomes: life improved in some ways, but not evenly and not for everyone.
+If GDP rises but purchasing power, inequality, or remittance dependency gets worse, the answer is a qualified yes: life improved in some ways, but not evenly and not for everyone.
 
 ## Fair Comparison Notes
 
@@ -87,7 +87,7 @@ For lifestyle comparisons, ratios may be more honest than raw pesos:
 - Food basket cost divided by monthly income
 - Health or out-of-pocket cost divided by income
 
-The question is not just "were prices lower before?" Of course they were. The better question is: **after adjusting for inflation and income, what could a Filipino household actually afford?**
+Prices were lower before, of course. The better question is: **after adjusting for inflation and income, what could a Filipino household actually afford?**
 
 ## Likely Data Source
 
@@ -205,7 +205,7 @@ Three findings that shape the rest of the project:
   inflation. It is the only decade in the dataset where the anchor line fell.
 - **Remittances went from 1.7% of GDP in the 1970s to 11.2% in the 2000s**
   while growth stayed weak through the 1990s. Sending someone abroad looks
-  less like a sign of success than a response to its absence.
+  more like a response to weak growth at home than a sign of success.
 
 Each query file opens with a comment block stating its business question and
 the judgement calls inside it. Every number above is regenerated by
@@ -219,8 +219,8 @@ Five charts with a written reading under each are in
 
 - **Income per person is 3.6 times its 1960 level**, $1,124 to $4,066 in
   constant 2015 US dollars. It took until 2004 to beat the 1982 level of $1,898.
-- **Growth crashes hard when it crashes.** The three worst years are 2020
-  (−10.55%), 1984 (−9.69%) and 1985 (−9.37%).
+- **The worst crashes cut income per person by more than 9%.** The three
+  worst years are 2020 (−10.55%), 1984 (−9.69%) and 1985 (−9.37%).
 - **Filipinos live 10.8 years longer than in 1960**, 59.2 to 69.9 years. Almost
   all of that came before 2015, and 2024 still sits below the 2020 peak of 70.1.
 - **Remittances rose from 1.5% of GDP in 1977 to 8.5% in 2025**, after peaking
@@ -236,6 +236,4 @@ cannot show, including cause.
 
 ## Possible Final Dashboard
 
-The dashboard should let someone explore their own question. One 65-year timeline as the base. GDP is the default line. Toggle on life expectancy. Toggle on inflation. Presidential eras appear as background bands. Event markers for recessions and crises. Era toggles: click "Internet Era" and the pre-1994 section grays out. Click "OFW Boom" and watch remittance lines against GDP. Pick any year - see what life was like. Pick two presidencies - see which had better numbers.
-
-The point: not a dashboard with 30 charts. One timeline with smart layers that let people ask their own questions.
+The dashboard should let someone explore their own question. One 65-year timeline as the base. GDP is the default line. Toggle on life expectancy or inflation. Presidential eras appear as background bands. Event markers for recessions and crises. Era toggles: click "Internet Era" and the pre-1994 section grays out. Click "OFW Boom" and watch remittance lines against GDP. Pick any year - see what life was like. Pick two presidencies - see which had better numbers.

@@ -37,7 +37,7 @@ count cannot drift again.
 
 ### Why it fits the project
 
-- It directly supports the core question with long-run national indicators.
+- It supports the core question with long-run national indicators.
 - It is machine-readable and easy to ingest into a reproducible pipeline.
 - It already covers GDP, life expectancy, inflation, inequality, remittances, and household consumption in one source.
 

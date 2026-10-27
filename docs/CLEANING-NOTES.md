@@ -36,10 +36,9 @@ not do, and which limitations any reader of the charts needs to know about.
 
 ## Known gaps and why they exist
 
-The reasons below are not prose written beside the data. They live in
-`GAP_REASONS` in `scripts/indicators.py`, get written into
-`data/processed/cleaning-report.json` on every transform, and are enforced by
-`validate.py`: a column with gaps and no reason fails the run, and a reason
+The reasons below live in `GAP_REASONS` in `scripts/indicators.py`, get
+written into `data/processed/cleaning-report.json` on every transform, and
+are enforced by `validate.py`: a column with gaps and no reason fails the run, and a reason
 left behind for a column that filled in is reported as stale. That is what
 keeps this table from drifting away from the dataset.
 
@@ -55,11 +54,9 @@ keeps this table from drifting away from the dataset.
 
 ## Limitations that affect the conclusions
 
-These belong in any honest reading of the charts.
-
 - **National averages hide distribution.** GDP per capita is total output
-  divided by people. It says nothing about who received it. This is exactly
-  why the Gini column is in the dataset, and why the analysis does not treat
+  divided by people. It says nothing about who received it. This is why
+  the Gini column is in the dataset, and why the analysis does not treat
   GDP growth alone as proof that life improved.
 - **Reported unemployment is implausibly low.** The series sits at 2.2% for
   2023–2025. That is the ILO-modelled rate; it does not capture
@@ -69,14 +66,14 @@ These belong in any honest reading of the charts.
 - **Gross enrollment can exceed 100%.** It counts all enrolled pupils
   against the official-age population, so repeaters and over-age pupils push
   it above 100. It measures access, not completion or quality.
-- **The CPI chain is only as good as its weakest year.** `cpi_index_2024` is
+- **The CPI chain carries early errors forward.** `cpi_index_2024` is
   a cumulative product across 66 annual inflation figures. Any revision to
   an early year shifts every later value. It is right for showing orders of
   magnitude, not for precise peso claims.
 - **Constant 2015 US dollars are not pesos.** The GDP columns are already
   inflation-adjusted, but in dollars, so they also carry exchange-rate
   effects. The peso columns exist to answer affordability questions; the
-  dollar columns answer growth questions. They should not be mixed.
+  dollar columns answer growth questions. Do not mix them.
 - **2025 is partial for some indicators.** Life expectancy has no 2025
   value, and other 2025 figures may be revised.
 
