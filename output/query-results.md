@@ -122,6 +122,10 @@ each survey year with the real GDP per capita of that same year and the
 change since the previous survey. Missing years are not interpolated;
 there is simply no Philippine Gini before 1985 in this source.
 
+The survey basis switches in 2000: consumption up to 1997, income from
+2000 (World Bank PIP). The two are not comparable, so gini_change is left
+empty for the 2000 row instead of reporting a change across the switch.
+
 If GDP per capita climbs while Gini refuses to fall, growth stayed at the
 top and "life got better" is not a clean yes.
 ```
@@ -133,7 +137,7 @@ top and "life got better" is not a clean yes.
 | 1991        | 1988            | 43.8 | 3.1         | 1656                        | 1.1                 |
 | 1994        | 1991            | 42.9 | -0.9        | 1655                        | -0.1                |
 | 1997        | 1994            | 46   | 3.1         | 1800                        | 8.8                 |
-| 2000        | 1997            | 47.7 | 1.7         | 1793                        | -0.4                |
+| 2000        | 1997            | 47.7 |             | 1793                        | -0.4                |
 | 2003        | 2000            | 46.6 | -1.1        | 1893                        | 5.5                 |
 | 2006        | 2003            | 47.2 | 0.6         | 2110                        | 11.5                |
 | 2009        | 2006            | 46.3 | -0.9        | 2257                        | 6.9                 |

@@ -3,6 +3,15 @@
 What `scripts/transform.py` does to the raw data, what it deliberately does
 not do, and which limitations any reader of the charts needs to know about.
 
+This file covers `data/processed/indicators.csv`. The other two processed
+tables have their own cleaning notes and gap tables:
+
+- `peers.csv`: [PEERS.md](./PEERS.md), section "Gaps and why they exist".
+- `wage_rice.csv`: [WAGE-RICE.md](./WAGE-RICE.md), sections "Method",
+  "Pitfalls Handled", "The 2018 Join", and "Limits".
+
+Neither table imputes a missing value.
+
 ## What the transform does
 
 1. **Reads one raw snapshot.** `ingest.py` writes every indicator into a
@@ -42,15 +51,18 @@ are enforced by `validate.py`: a column with gaps and no reason fails the run, a
 left behind for a column that filled in is reported as stale. That is what
 keeps this table from drifting away from the dataset.
 
-
 | Column | Gap | Why |
 |---|---|---|
-| `gini` | Only 14 points, 1985–2023 | Comes from household surveys run every ~3 years, not annually. There is no Philippine Gini before 1985 in this source. |
+| `gini` | Only 14 points, 1985–2023; basis changes in 2000 | Comes from household surveys run every ~3 years, not annually. There is no Philippine Gini before 1985 in this source. 1985–1997 values are consumption-based, 2000–2023 values income-based. |
 | `health_expenditure` | Starts 2000 | The World Bank's health accounts series does not extend earlier. |
 | `unemployment` | Starts 1991 | Modelled ILO estimate; earlier years are not published. |
 | `household_consumption` | Starts 1981 | National accounts detail is unavailable before then. |
 | `school_enrollment` | Starts 1971, gaps within | Reported irregularly by the education ministry. |
 | `life_expectancy` | No 2025 value | Published on a longer lag than the economic series. |
+| `poverty_national` | Only 4 points, 2015–2023 | PSA survey rounds. The World Bank carries 2015, 2018, 2021 and 2023 only, nothing earlier. |
+| `electricity_access` | Starts 1993, no 2025 value | The World Bank series does not extend earlier. |
+| `infant_mortality` | No 2025 value | UN inter-agency modelled estimate, published on a lag. |
+| `fertility_rate` | No 2025 value | UN population estimate, published on a lag. |
 
 ## Limitations that affect the conclusions
 
@@ -58,11 +70,23 @@ keeps this table from drifting away from the dataset.
   divided by people. It says nothing about who received it. This is why
   the Gini column is in the dataset, and why the analysis does not treat
   GDP growth alone as proof that life improved.
+- **The Gini series changes basis in 2000.** The World Bank computes the
+  five values for 1985–1997 from household consumption and the nine values
+  for 2000–2023 from household income. All 14 match the World Bank Poverty
+  and Inequality Platform (`api.worldbank.org/pip/v1/pip?country=PHL&year=all`).
+  Income is spread more unevenly than consumption, so an income Gini
+  normally reads higher. Values on either side of 2000 are not directly
+  comparable: part of the rise from 46.0 in 1997 to 47.7 in 2000 may be the
+  change of method. Compare trends within one basis, for example 47.7 in
+  2000 to 39.3 in 2023. The transform keeps the published values unchanged.
 - **Reported unemployment is implausibly low.** The series sits at 2.2% for
   2023–2025. That is the ILO-modelled rate; it does not capture
   underemployment or the large informal sector, both of which matter far
   more for Filipino lived experience. Do not read low unemployment as a
   healthy job market.
+- **National poverty covers 8 years, not 65.** `poverty_national` has four
+  points, 2015–2023, all on the PSA's current method. It shows the recent
+  trend only and cannot answer the 1960 comparison.
 - **Gross enrollment can exceed 100%.** It counts all enrolled pupils
   against the official-age population, so repeaters and over-age pupils push
   it above 100. It measures access, not completion or quality.
@@ -74,29 +98,22 @@ keeps this table from drifting away from the dataset.
   inflation-adjusted, but in dollars, so they also carry exchange-rate
   effects. The peso columns exist to answer affordability questions; the
   dollar columns answer growth questions. Do not mix them.
-- **2025 is partial for some indicators.** Life expectancy has no 2025
-  value, and other 2025 figures may be revised.
+- **2025 is partial for some indicators.** Life expectancy, infant
+  mortality, fertility, and electricity access have no 2025 value, and other
+  2025 figures may be revised.
 
 ## Reproducing
+
+`python scripts/run_pipeline.py --offline` rebuilds all three tables. For
+this table alone:
 
 ```
 python scripts/ingest.py      # pull raw JSON from the World Bank API
 python scripts/transform.py   # build indicators.csv + indicators.json
 python scripts/validate.py    # 25 data quality checks, non-zero exit on failure
-python scripts/query.py       # run sql/ against the processed table
 ```
 
-`validate.py` is the gate: it checks the year index is complete and integer
-typed, every value column is a float, every registered indicator has a column,
-the four core series each cover at least 60 years, every value sits inside a
-plausible range, population only increases, and the CPI index rises
-monotonically and equals 100 in 2024.
-
-`query.py` loads the processed CSV and the presidency lookup into an
-in-memory SQLite database, runs every file in `sql/`, and writes
-`output/query-results.md`. Nothing is stored as a `.db` file, so there is no
-second copy of the data that can drift out of step with the CSV.
-
-`transform.py` and `query.py` both produce byte-identical output on repeated
-runs. The only thing that changes between runs is the raw snapshot, and only
-when `ingest.py` is run again.
+`validate.py` is the gate: it checks the year index is complete, every
+registered indicator has a column, the four core series each cover at least
+60 years, every value sits inside a plausible range, population only
+increases, and the CPI index rises monotonically and equals 100 in 2024.

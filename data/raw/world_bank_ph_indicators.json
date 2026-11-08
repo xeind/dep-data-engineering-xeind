@@ -2,7 +2,7 @@
   "source": "World Bank API",
   "country": "PH",
   "date_range": "1960:2025",
-  "pulled_at_utc": "2026-07-28T08:59:19.812163+00:00",
+  "pulled_at_utc": "2026-10-04T15:38:42.258890+00:00",
   "indicators": {
     "NY.GDP.PCAP.KD": {
       "column": "gdp_per_capita_const",
@@ -12853,6 +12853,4290 @@
           "unit": "",
           "obs_status": "",
           "decimal": 0
+        }
+      ]
+    },
+    "SP.DYN.IMRT.IN": {
+      "column": "infant_mortality",
+      "name": "Mortality rate, infant",
+      "unit": "per 1,000 live births",
+      "urls": [
+        "https://api.worldbank.org/v2/country/PH/indicator/SP.DYN.IMRT.IN?format=json&date=1960%3A2025&per_page=200&page=1"
+      ],
+      "row_count": 66,
+      "observed_count": 65,
+      "first_year": 1960,
+      "last_year": 2024,
+      "source_last_updated": "2026-07-13",
+      "rows": [
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2025",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2024",
+          "value": 21.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2023",
+          "value": 22,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2022",
+          "value": 22.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2021",
+          "value": 22.6,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2020",
+          "value": 22.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2019",
+          "value": 22.6,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2018",
+          "value": 22.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2017",
+          "value": 22.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2016",
+          "value": 22.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2015",
+          "value": 22.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2014",
+          "value": 22.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2013",
+          "value": 22.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2012",
+          "value": 22.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2011",
+          "value": 22.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2010",
+          "value": 23,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2009",
+          "value": 23.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2008",
+          "value": 23.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2007",
+          "value": 24.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2006",
+          "value": 24.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2005",
+          "value": 25,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2004",
+          "value": 25.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2003",
+          "value": 25.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2002",
+          "value": 26.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2001",
+          "value": 26.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2000",
+          "value": 27.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1999",
+          "value": 27.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1998",
+          "value": 28.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1997",
+          "value": 29,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1996",
+          "value": 29.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1995",
+          "value": 30.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1994",
+          "value": 32,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1993",
+          "value": 33.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1992",
+          "value": 34.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1991",
+          "value": 36.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1990",
+          "value": 38.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1989",
+          "value": 41,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1988",
+          "value": 43.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1987",
+          "value": 45.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1986",
+          "value": 47.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1985",
+          "value": 48.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1984",
+          "value": 49.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1983",
+          "value": 50.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1982",
+          "value": 51.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1981",
+          "value": 52.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1980",
+          "value": 52.6,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1979",
+          "value": 52.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1978",
+          "value": 53.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1977",
+          "value": 53.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1976",
+          "value": 53.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1975",
+          "value": 53.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1974",
+          "value": 53.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1973",
+          "value": 53,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1972",
+          "value": 52.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1971",
+          "value": 52.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1970",
+          "value": 53.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1969",
+          "value": 53.6,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1968",
+          "value": 54.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1967",
+          "value": 54.9,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1966",
+          "value": 55.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1965",
+          "value": 56.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1964",
+          "value": 57.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1963",
+          "value": 58.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1962",
+          "value": 59.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1961",
+          "value": 60.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.IMRT.IN",
+            "value": "Mortality rate, infant (per 1,000 live births)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1960",
+          "value": 62.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 0
+        }
+      ]
+    },
+    "SP.DYN.TFRT.IN": {
+      "column": "fertility_rate",
+      "name": "Fertility rate, total",
+      "unit": "births per woman",
+      "urls": [
+        "https://api.worldbank.org/v2/country/PH/indicator/SP.DYN.TFRT.IN?format=json&date=1960%3A2025&per_page=200&page=1"
+      ],
+      "row_count": 66,
+      "observed_count": 65,
+      "first_year": 1960,
+      "last_year": 2024,
+      "source_last_updated": "2026-07-13",
+      "rows": [
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2025",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2024",
+          "value": 1.894,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2023",
+          "value": 1.916,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2022",
+          "value": 1.929,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2021",
+          "value": 1.95,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2020",
+          "value": 2.075,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2019",
+          "value": 2.215,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2018",
+          "value": 2.378,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2017",
+          "value": 2.525,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2016",
+          "value": 2.679,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2015",
+          "value": 2.829,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2014",
+          "value": 2.894,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2013",
+          "value": 3.042,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2012",
+          "value": 3.143,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2011",
+          "value": 3.236,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2010",
+          "value": 3.315,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2009",
+          "value": 3.376,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2008",
+          "value": 3.401,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2007",
+          "value": 3.403,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2006",
+          "value": 3.466,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2005",
+          "value": 3.448,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2004",
+          "value": 3.524,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2003",
+          "value": 3.591,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2002",
+          "value": 3.651,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2001",
+          "value": 3.719,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2000",
+          "value": 3.754,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1999",
+          "value": 3.825,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1998",
+          "value": 3.884,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1997",
+          "value": 3.943,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1996",
+          "value": 4.004,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1995",
+          "value": 4.067,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1994",
+          "value": 4.079,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1993",
+          "value": 4.098,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1992",
+          "value": 4.161,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1991",
+          "value": 4.273,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1990",
+          "value": 4.322,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1989",
+          "value": 4.365,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1988",
+          "value": 4.449,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1987",
+          "value": 4.509,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1986",
+          "value": 4.563,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1985",
+          "value": 4.664,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1984",
+          "value": 4.77,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1983",
+          "value": 4.867,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1982",
+          "value": 4.917,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1981",
+          "value": 4.973,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1980",
+          "value": 5.108,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1979",
+          "value": 5.255,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1978",
+          "value": 5.393,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1977",
+          "value": 5.442,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1976",
+          "value": 5.505,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1975",
+          "value": 5.596,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1974",
+          "value": 5.693,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1973",
+          "value": 5.787,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1972",
+          "value": 5.937,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1971",
+          "value": 6.083,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1970",
+          "value": 6.218,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1969",
+          "value": 6.333,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1968",
+          "value": 6.448,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1967",
+          "value": 6.572,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1966",
+          "value": 6.691,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1965",
+          "value": 6.799,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1964",
+          "value": 6.886,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1963",
+          "value": 6.952,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1962",
+          "value": 6.98,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1961",
+          "value": 6.994,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SP.DYN.TFRT.IN",
+            "value": "Fertility rate, total (births per woman)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1960",
+          "value": 6.996,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        }
+      ]
+    },
+    "EG.ELC.ACCS.ZS": {
+      "column": "electricity_access",
+      "name": "Access to electricity",
+      "unit": "% of population",
+      "urls": [
+        "https://api.worldbank.org/v2/country/PH/indicator/EG.ELC.ACCS.ZS?format=json&date=1960%3A2025&per_page=200&page=1"
+      ],
+      "row_count": 66,
+      "observed_count": 32,
+      "first_year": 1993,
+      "last_year": 2024,
+      "source_last_updated": "2026-07-13",
+      "rows": [
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2025",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2024",
+          "value": 94.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2023",
+          "value": 98,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2022",
+          "value": 94.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2021",
+          "value": 97.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2020",
+          "value": 96.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2019",
+          "value": 95.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2018",
+          "value": 94.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2017",
+          "value": 93,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2016",
+          "value": 92,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2015",
+          "value": 89.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2014",
+          "value": 89.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2013",
+          "value": 87.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2012",
+          "value": 87.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2011",
+          "value": 87.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2010",
+          "value": 85.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2009",
+          "value": 84.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2008",
+          "value": 83.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2007",
+          "value": 82,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2006",
+          "value": 80.2,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2005",
+          "value": 79.8,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2004",
+          "value": 87.6,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2003",
+          "value": 76.6,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2002",
+          "value": 76.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2001",
+          "value": 75.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2000",
+          "value": 74.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1999",
+          "value": 71.8741709275167,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1998",
+          "value": 71.3,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1997",
+          "value": 71.3533935546875,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1996",
+          "value": 70.2449569702148,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1995",
+          "value": 69.1331176757813,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1994",
+          "value": 68.0185546875,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1993",
+          "value": 65.4,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1992",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1991",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1990",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1989",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1988",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1987",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1986",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1985",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1984",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1983",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1982",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1981",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1980",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1979",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1978",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1977",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1976",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1975",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1974",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1973",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1972",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1971",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1970",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1969",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1968",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1967",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1966",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1965",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1964",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1963",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1962",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1961",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "EG.ELC.ACCS.ZS",
+            "value": "Access to electricity (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1960",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        }
+      ]
+    },
+    "SI.POV.NAHC": {
+      "column": "poverty_national",
+      "name": "Poverty headcount ratio at national poverty lines",
+      "unit": "% of population",
+      "urls": [
+        "https://api.worldbank.org/v2/country/PH/indicator/SI.POV.NAHC?format=json&date=1960%3A2025&per_page=200&page=1"
+      ],
+      "row_count": 66,
+      "observed_count": 4,
+      "first_year": 2015,
+      "last_year": 2023,
+      "source_last_updated": "2026-07-13",
+      "rows": [
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2025",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2024",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2023",
+          "value": 15.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2022",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2021",
+          "value": 18.1,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2020",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2019",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2018",
+          "value": 16.7,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2017",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2016",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2015",
+          "value": 23.5,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2014",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2013",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2012",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2011",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2010",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2009",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2008",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2007",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2006",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2005",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2004",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2003",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2002",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2001",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "2000",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1999",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1998",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1997",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1996",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1995",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1994",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1993",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1992",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1991",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1990",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1989",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1988",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1987",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1986",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1985",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1984",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1983",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1982",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1981",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1980",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1979",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1978",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1977",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1976",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1975",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1974",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1973",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1972",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1971",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1970",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1969",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1968",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1967",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1966",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1965",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1964",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1963",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1962",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1961",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
+        },
+        {
+          "indicator": {
+            "id": "SI.POV.NAHC",
+            "value": "Poverty headcount ratio at national poverty lines (% of population)"
+          },
+          "country": {
+            "id": "PH",
+            "value": "Philippines"
+          },
+          "countryiso3code": "PHL",
+          "date": "1960",
+          "value": null,
+          "unit": "",
+          "obs_status": "",
+          "decimal": 1
         }
       ]
     }

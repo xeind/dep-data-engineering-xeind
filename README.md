@@ -34,7 +34,17 @@ This project is for **Filipinos wondering if progress is real**. Anyone asking w
 
 ## KPI or Key Metric
 
-The main metric I want to track is **Real GDP per capita over time**. But GDP alone is lazy. I want to also look at life expectancy, inflation, inequality (Gini), remittance dependency, school enrollment, and household spending. The dashboard should let people toggle between them.
+The main metric I want to track is **Real GDP per capita over time**. But GDP alone is lazy, so four more KPIs sit beside it. Each one tests GDP from a different side: survival, distribution, dependence on work abroad, and what a day's pay buys.
+
+| KPI | Column | Unit | Better is | First value | Latest value |
+|---|---|---|---|---|---|
+| Real GDP per capita | `gdp_per_capita_const` | constant 2015 US$ | up | 1,124 (1960) | 4,066 (2025) |
+| Infant mortality | `infant_mortality` | deaths per 1,000 live births | down | 62.3 (1960) | 21.7 (2024) |
+| Inequality (Gini) | `gini` | index 0–100 | down | 41.0 (1985) | 39.3 (2023) |
+| Remittances | `remittances` | % of GDP | read with care | 1.5 (1977) | 8.5 (2025) |
+| Kilos of rice per day's NCR minimum wage | `rice_kg_per_day_wage` | kg | up | 10.37 (1990) | 16.22 (2025) |
+
+The Gini series changes basis in 2000, from consumption to income, so 1985 and 2023 are not directly comparable; within the income basis it fell from 47.7 (2000) to 39.3 (2023). Remittances have no clean "better" direction. A high share can mean families are doing well abroad, or that home cannot employ them. The first four come from `data/processed/indicators.csv`; the rice KPI comes from `data/processed/wage_rice.csv`. [`notebooks/kpis.ipynb`](notebooks/kpis.ipynb) builds the KPI charts.
 
 ## Comparison Approach
 
@@ -95,6 +105,11 @@ My primary source is the **World Bank API** (https://api.worldbank.org/v2/countr
 
 My fallback source is the **Philippine Statistics Authority Family Income and Expenditure Survey (FIES)** (https://psa.gov.ph/statistics/income-expenditure/fies), which can support a narrower household affordability version of the project if the World Bank data is too broad for lived-cost analysis.
 
+Two more sources now feed the pipeline:
+
+- **World Bank API, peer countries.** The same core indicators for Thailand, Vietnam, Indonesia, and Malaysia, so the Philippine trend has something to compare against. See [`docs/PEERS.md`](docs/PEERS.md).
+- **PSA OpenSTAT and NWPC.** NCR retail rice prices from the PSA OpenSTAT API (tables `0042M4ARP01` and `0042M4ARN01`), and NCR minimum wage orders hand-transcribed from the NWPC wage-order PDF. Together they give the kilos-of-rice KPI. See [`docs/WAGE-RICE.md`](docs/WAGE-RICE.md).
+
 ## Data Source Notes
 
 ### Primary Source
@@ -121,6 +136,10 @@ Useful starting indicators:
 | Remittances, % of GDP | `BX.TRF.PWKR.DT.GD.ZS` | OFW dependency / support |
 | Health expenditure, % of GDP | `SH.XPD.CHEX.GD.ZS` | Health system investment |
 | Household consumption, % of GDP | `NE.CON.PRVT.ZS` | How much of the economy is household spending |
+| Infant mortality, per 1,000 live births | `SP.DYN.IMRT.IN` | Child survival |
+| Fertility rate, births per woman | `SP.DYN.TFRT.IN` | Family size |
+| Access to electricity, % of population | `EG.ELC.ACCS.ZS` | Basic household services |
+| Poverty headcount, national poverty lines | `SI.POV.NAHC` | Poverty by the national line (2015-2023 only) |
 
 ### Fallback Source
 
@@ -135,52 +154,140 @@ For Week 2, my committed plan is: **primary source = World Bank API**, **fallbac
 
 ## How To Run
 
+Needs Python 3.11 or later (pandas 3.0 requires it).
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
+python scripts/run_pipeline.py --offline
 ```
 
-Run the pipeline in this order. Each step reads what the previous one wrote.
+That one command rebuilds every processed file from the raw snapshots in
+`data/raw/` and runs every validation. It stops at the first step that fails
+and names it.
+
+| Command | What it does | Network |
+|---|---|---|
+| `python scripts/run_pipeline.py` | Pulls fresh data from every source, then rebuilds and validates | yes |
+| `python scripts/run_pipeline.py --offline` | Skips the three ingest steps and rebuilds from `data/raw/` | no |
+| `python scripts/run_pipeline.py --offline --notebooks` | Also re-executes the three notebooks in place, which re-exports the figures | no |
+
+The raw snapshots are committed, so `--offline` reproduces every number in
+this repo. All transform steps write byte-identical output on repeated runs.
+
+### Step by step
+
+The same run, one script at a time. Order matters. Each step reads what the
+step before it wrote, and `validate_peers.py` also reads `indicators.csv`, so
+the main pipeline goes first.
 
 ```bash
-python scripts/ingest.py      # 1. pull raw JSON from the World Bank API
-python scripts/transform.py   # 2. build the clean dataset
-python scripts/validate.py    # 3. 25 data quality checks
-python scripts/query.py       # 4. answer the business questions in SQL
+# Main: Philippines, 16 World Bank indicators, 1960-2025
+python scripts/ingest.py               # 1. pull raw JSON from the World Bank API
+python scripts/transform.py            # 2. build the clean dataset
+python scripts/validate.py             # 3. 25 data quality checks
+python scripts/query.py                # 4. answer the business questions in SQL
+
+# Peers: the Philippines and 4 neighbours, 5 indicators, 1960-2025
+python scripts/ingest_peers.py         # 5. pull raw JSON for 5 countries
+python scripts/transform_peers.py      # 6. build peers.csv
+python scripts/validate_peers.py       # 7. 7 checks
+
+# Wage-rice: NCR minimum wage against the NCR rice price, 1990-2025
+python scripts/ingest_wage_rice.py     # 8. PSA rice prices, NWPC PDF, transcription check
+python scripts/transform_wage_rice.py  # 9. build wage_rice.csv
+python scripts/validate_wage_rice.py   # 10. 18 checks
+
+# Analysis, after the data steps
+jupyter nbconvert --to notebook --execute --inplace notebooks/insights.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/segmentation.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/kpis.ipynb
 ```
 
-Steps 2 to 4 run offline. `data/raw/world_bank_ph_indicators.json` is
-committed, so a reviewer can skip step 1 and still reproduce every number.
+Only the three ingest steps need the network. Skip them to work offline.
 
 | Step | Reads | Writes |
 |---|---|---|
-| `ingest.py` | World Bank API, 12 indicators, 1960–2025 | `data/raw/world_bank_ph_indicators.json` |
-| `transform.py` | the raw snapshot | `data/processed/indicators.csv`, `data/processed/indicators.json`, `data/processed/cleaning-report.json` |
-| `validate.py` | the processed CSV | nothing; exits non-zero if a check fails |
-| `query.py` | the processed CSV + `data/reference/presidencies.csv` | `output/query-results.md` |
+| `ingest.py` | World Bank API, 16 indicators | `data/raw/world_bank_ph_indicators.json` |
+| `transform.py` | the raw snapshot | `data/processed/indicators.csv`, `indicators.json`, `cleaning-report.json` |
+| `validate.py` | `indicators.csv` | nothing; exits non-zero if a check fails |
+| `query.py` | `indicators.csv` + `data/reference/presidencies.csv` | `output/query-results.md` |
+| `ingest_peers.py` | World Bank API, 5 countries × 5 indicators | `data/raw/world_bank_peers.json` |
+| `transform_peers.py` | the peers snapshot | `data/processed/peers.csv` |
+| `validate_peers.py` | `peers.csv` + `indicators.csv` | nothing; exits non-zero if a check fails |
+| `ingest_wage_rice.py` | PSA OpenSTAT API, NWPC PDF, `data/raw/ncr_wage_orders.csv` | `data/raw/psa_rice_prices.json`, the NWPC PDF |
+| `transform_wage_rice.py` | `psa_rice_prices.json` + `ncr_wage_orders.csv` | `data/processed/wage_rice.csv` |
+| `validate_wage_rice.py` | `wage_rice.csv` + `ncr_wage_orders.csv` | nothing; exits non-zero if a check fails |
 
-`ingest.py` fetches the 12 indicators listed in `scripts/indicators.py` with
-retries, backoff, and pagination, and records the request URLs and pull
-timestamp inside the snapshot. `transform.py` reshapes that into 66 years by
-17 columns and adds the derived columns the question needs, including the CPI
-chain that makes peso comparisons across 65 years honest. Both scripts
-produce byte-identical output on repeated runs.
+`scripts/indicators.py` is not a step. It holds the 16 indicator codes,
+column names, units, and gap reasons, and every other script imports it.
 
-`validate.py` is the gate. It checks the year index is complete and typed as
-an integer, every value column is a float, every registered indicator has a
-column, the four core series each cover at least 60 years, every value sits in
-a plausible range, population only ever increases, and the CPI index rises
-monotonically and equals 100 in its base year.
+**Optional system dependency: Ghostscript (`gs`).** `ingest_wage_rice.py`
+uses it to check the hand-transcribed wage orders against the PDF text, row
+by row. Without `gs` that check prints `SKIPPED` and the script still checks
+the PDF's SHA-256. No other step needs it.
 
-Two checks guard the documentation itself. Any column with gaps must have a
-stated reason in `scripts/indicators.py`, and any reason for a column that no
-longer has gaps is reported as stale. Gaps are allowed; undocumented gaps fail
-the build. All 25 checks currently pass.
+### The validation gates
 
-Details: [`docs/SCHEMA.md`](docs/SCHEMA.md),
-[`docs/CLEANING-NOTES.md`](docs/CLEANING-NOTES.md),
-[`docs/DATA-SOURCES.md`](docs/DATA-SOURCES.md).
+`validate.py` checks the year index is complete and typed as an integer,
+every value column is a float, every registered indicator has a column, the
+four core series each cover at least 60 years, every value sits in a
+plausible range, population only ever increases, and the CPI index rises
+monotonically and equals 100 in its base year. Two more checks guard the
+documentation itself. Any column with gaps must have a stated reason in
+`scripts/indicators.py`, and a reason for a column that no longer has gaps
+is reported as stale.
+
+`validate_peers.py` checks the country set, one row per country-year, the
+column set, types, and that the Philippine rows equal `indicators.csv` on
+every shared column. `validate_wage_rice.py` checks the wage orders add up
+and run in date order, the year index is complete, the kilos figure
+recomputes exactly from wage and price, and every rice price rests on at
+least 10 monthly reports.
+
+All 50 checks currently pass: 25 + 7 + 18.
+
+## Datasets
+
+| File | One row per | Key | Coverage | Documented in |
+|---|---|---|---|---|
+| `data/processed/indicators.csv` | year | `year` | 1960–2025, 66 rows × 21 columns | [`SCHEMA.md`](docs/SCHEMA.md), [`CLEANING-NOTES.md`](docs/CLEANING-NOTES.md) |
+| `data/processed/indicators.json` | same table, shaped for the dashboard | `years` array | 1960–2025 | [`SCHEMA.md`](docs/SCHEMA.md) |
+| `data/processed/peers.csv` | country-year | `country_code` + `year` | 5 countries × 1960–2025, 330 rows | [`SCHEMA.md`](docs/SCHEMA.md), [`PEERS.md`](docs/PEERS.md) |
+| `data/processed/wage_rice.csv` | year | `year` | 1990–2025, 36 rows | [`SCHEMA.md`](docs/SCHEMA.md), [`WAGE-RICE.md`](docs/WAGE-RICE.md) |
+| `data/processed/cleaning-report.json` | column of `indicators.csv` | column name | coverage and gap reason per column | [`CLEANING-NOTES.md`](docs/CLEANING-NOTES.md) |
+
+Empty cells are years the source did not measure. Nothing is imputed.
+
+## Outputs
+
+| Output | Built by | What it shows |
+|---|---|---|
+| [`notebooks/insights.ipynb`](notebooks/insights.ipynb) | Jupyter | Five charts, each with Observation, Implication, and Possible Action |
+| [`notebooks/segmentation.ipynb`](notebooks/segmentation.ipynb) | Jupyter | When the gains landed and who got them: eras, birth cohorts, peer countries |
+| [`notebooks/kpis.ipynb`](notebooks/kpis.ipynb) | Jupyter | The five headline KPIs and a scorecard |
+| `output/figures/01-*.png` to `05-*.png` | `insights.ipynb` | Exported charts |
+| `output/figures/seg-*.png` | `segmentation.ipynb` | Exported charts |
+| `output/figures/kpi-*.png` | `kpis.ipynb` | Exported charts |
+| [`output/query-results.md`](output/query-results.md) | `query.py` | The five SQL answers |
+
+The notebooks are committed with their outputs, so GitHub shows every chart
+without running anything.
+
+## Documentation
+
+| Document | What it covers |
+|---|---|
+| [`docs/STAKEHOLDER-BRIEF.md`](docs/STAKEHOLDER-BRIEF.md) | The answer, for the audience above |
+| [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md) | What the data cannot say |
+| [`docs/DATA-SOURCES.md`](docs/DATA-SOURCES.md) | Every source, endpoint, and table |
+| [`docs/SCHEMA.md`](docs/SCHEMA.md) | Every column in every processed file |
+| [`docs/CLEANING-NOTES.md`](docs/CLEANING-NOTES.md) | What the transforms do, what they refuse to do, and known gaps |
+| [`docs/PEERS.md`](docs/PEERS.md) | Why these four countries, and their gaps |
+| [`docs/WAGE-RICE.md`](docs/WAGE-RICE.md) | The wage-rice method, the manual transcription, and the 2018 series join |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Pipeline diagram, directory tree, design decisions |
 
 ## Questions Answered In SQL
 

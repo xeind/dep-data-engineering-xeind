@@ -23,6 +23,10 @@ INDICATORS = {
     "BX.TRF.PWKR.DT.GD.ZS": ("remittances", "Personal remittances, received", "% of GDP"),
     "SH.XPD.CHEX.GD.ZS": ("health_expenditure", "Current health expenditure", "% of GDP"),
     "NE.CON.PRVT.ZS": ("household_consumption", "Household final consumption expenditure", "% of GDP"),
+    "SP.DYN.IMRT.IN": ("infant_mortality", "Mortality rate, infant", "per 1,000 live births"),
+    "SP.DYN.TFRT.IN": ("fertility_rate", "Fertility rate, total", "births per woman"),
+    "EG.ELC.ACCS.ZS": ("electricity_access", "Access to electricity", "% of population"),
+    "SI.POV.NAHC": ("poverty_national", "Poverty headcount ratio at national poverty lines", "% of population"),
 }
 
 # The anchor line for the whole project. GDP says the country got richer —
@@ -41,6 +45,10 @@ GAP_REASONS = {
     "remittances": "Balance-of-payments reporting of worker remittances begins in 1977.",
     "health_expenditure": "The World Bank health accounts series does not extend before 2000.",
     "household_consumption": "National accounts detail is unavailable before 1981.",
+    "infant_mortality": "UN inter-agency modelled estimate, published on a lag; no 2025 value yet.",
+    "fertility_rate": "UN population estimate, published on a lag; no 2025 value yet.",
+    "electricity_access": "The World Bank series does not extend before 1993; no 2025 value yet.",
+    "poverty_national": "PSA survey rounds only; the World Bank carries 2015, 2018, 2021 and 2023, nothing earlier.",
     # Derived columns lose their first year by construction, not by missing data.
     "gdp_growth_pct": "Year-over-year change, so 1960 has no prior year to compare against.",
     "life_expectancy_gain": "Derived from life_expectancy and inherits its missing 2025 value.",

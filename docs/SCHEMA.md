@@ -1,15 +1,25 @@
 # Schema
 
+Three processed tables, each built by its own transform script.
+
+| File | One row per | Key | Rows |
+|---|---|---|---:|
+| [`indicators.csv`](#indicatorscsv) | year | `year` | 66 |
+| [`peers.csv`](#peerscsv) | country-year | `country_code` + `year` | 330 |
+| [`wage_rice.csv`](#wage_ricecsv) | year | `year` | 36 |
+
+## indicators.csv
+
 `data/processed/indicators.csv` — one row per year, 1960–2025, 66 rows.
 Produced by `scripts/transform.py` from `data/raw/world_bank_ph_indicators.json`.
 
-## Key
+### Key
 
 | Column | Type | Description |
 |---|---|---|
 | `year` | int | Primary key. Complete and gap-free, 1960–2025. |
 
-## Source columns
+### Source columns
 
 Pulled directly from the World Bank API, one column per indicator. Column
 names, labels, and units are defined once in `scripts/indicators.py`.
@@ -28,8 +38,18 @@ names, labels, and units are defined once in `scripts/indicators.py`.
 | `remittances` | `BX.TRF.PWKR.DT.GD.ZS` | % of GDP | 49 | 1977–2025 |
 | `health_expenditure` | `SH.XPD.CHEX.GD.ZS` | % of GDP | 24 | 2000–2023 |
 | `household_consumption` | `NE.CON.PRVT.ZS` | % of GDP | 45 | 1981–2025 |
+| `infant_mortality` | `SP.DYN.IMRT.IN` | per 1,000 live births | 65 | 1960–2024 |
+| `fertility_rate` | `SP.DYN.TFRT.IN` | births per woman | 65 | 1960–2024 |
+| `electricity_access` | `EG.ELC.ACCS.ZS` | % of population | 32 | 1993–2024 |
+| `poverty_national` | `SI.POV.NAHC` | % of population | 4 | 2015–2023 |
 
-## Derived columns
+`gini` changes basis in 2000. The World Bank computes the 1985–1997 values
+from household consumption and the 2000–2023 values from household income;
+all 14 values match the World Bank Poverty and Inequality Platform (PIP).
+Values on either side of 2000 are not directly comparable. See
+[CLEANING-NOTES.md](./CLEANING-NOTES.md).
+
+### Derived columns
 
 Computed in `transform.py`. These do not exist in the source.
 
@@ -45,11 +65,22 @@ Computed in `transform.py`. These do not exist in the source.
 across 65 years honest. Without them, every "things were cheaper before"
 claim is unadjusted and meaningless.
 
-## Missing values
+### Missing values
 
 Empty cells are absent from the source, never imputed. See
 [CLEANING-NOTES.md](./CLEANING-NOTES.md) for why each gap exists and how
 analysis should treat it.
+
+### Companion files
+
+`data/processed/cleaning-report.json` records, per column, the observed and
+missing counts, the observed span, the dtype, the exact missing years, and the
+documented reason for the gap. It is generated, never hand-edited.
+
+`data/processed/indicators.json` holds the same table shaped for the
+dashboard: a `meta` block (source, pull timestamp, price base year, column
+labels and units), a `years` array, and one array per column with `null` for
+missing values.
 
 ## Reference table
 
@@ -81,13 +112,59 @@ Marcos Sr. is credited 1966–1985 because he was deposed in February 1986.
 Garcia's row has no total-change figure in query 02 because that calculation
 needs 1959, which predates the dataset.
 
-## Companion file
+## peers.csv
 
-`data/processed/cleaning-report.json` records, per column, the observed and
-missing counts, the observed span, the dtype, the exact missing years, and the
-documented reason for the gap. It is generated, never hand-edited.
+`data/processed/peers.csv` — one row per country per year, 5 countries ×
+1960–2025, 330 rows. Produced by `scripts/transform_peers.py` from
+`data/raw/world_bank_peers.json`. Long format: filter on `country_code` to get
+one country's series.
 
-`data/processed/indicators.json` holds the same table shaped for the
-dashboard: a `meta` block (source, pull timestamp, price base year, column
-labels and units), a `years` array, and one array per column with `null` for
-missing values.
+### Key
+
+| Column | Type | Description |
+|---|---|---|
+| `country_code` | str | World Bank 2-letter code: `PH`, `TH`, `VN`, `ID`, `MY`. |
+| `country` | str | Country name as the World Bank publishes it, for example `Viet Nam`. |
+| `year` | int | 1960–2025. Every country has every year exactly once. |
+
+`country_code` + `year` is the primary key.
+
+### Value columns
+
+Every column below shares its name and unit with `indicators.csv`, so a
+column means the same thing in both tables. The `PH` rows equal
+`indicators.csv` on every shared column; `validate_peers.py` fails if they
+drift apart.
+
+| Column | World Bank code | Type | Unit |
+|---|---|---|---|
+| `gdp_per_capita_const` | `NY.GDP.PCAP.KD` | float | US$ (2015) |
+| `life_expectancy` | `SP.DYN.LE00.IN` | float | years |
+| `infant_mortality` | `SP.DYN.IMRT.IN` | float | per 1,000 live births |
+| `gini` | `SI.POV.GINI` | float | index 0–100 |
+| `remittances` | `BX.TRF.PWKR.DT.GD.ZS` | float | % of GDP |
+| `gdp_index_1960` | derived | float | index, each country's own 1960 = 100 |
+
+`gdp_index_1960` is empty for Vietnam in every year: its GDP series starts in
+1984, so it has no 1960 base. Coverage by country, and the reason for every
+gap, are in [PEERS.md](./PEERS.md).
+
+## wage_rice.csv
+
+`data/processed/wage_rice.csv` — one row per year, 1990–2025, 36 rows, no
+missing values. Produced by `scripts/transform_wage_rice.py` from
+`data/raw/psa_rice_prices.json` and `data/raw/ncr_wage_orders.csv`. All
+figures are for the National Capital Region (NCR) only.
+
+| Column | Type | Unit | Description |
+|---|---|---|---|
+| `year` | int | — | Primary key, 1990–2025, complete. |
+| `ncr_min_wage_daily` | float | PHP per day | NCR daily minimum wage, non-agriculture, top of range, basic pay plus COLA. Day-weighted annual average, 2 decimals. |
+| `rice_regular_milled_ncr` | float | PHP per kg | PSA annual average retail price of regular-milled rice in NCR, as published. |
+| `rice_kg_per_day_wage` | float | kg | `ncr_min_wage_daily / rice_regular_milled_ncr`, 4 decimals. The headline KPI. |
+| `rice_price_series` | str | — | PSA table that supplied that year's price: `PSA-RP-0042M4ARP01` for 1990–2017, `PSA-2018NEW-0042M4ARN01` from 2018. |
+| `rice_months_reported` | int | months | Months with a PSA price that year, out of 12. Two years have 10. |
+
+Money columns are nominal pesos. They are not deflated, because the ratio
+cancels the price level: kilos of rice is already a real measure. The method,
+the 2018 series join, and the limits are in [WAGE-RICE.md](./WAGE-RICE.md).

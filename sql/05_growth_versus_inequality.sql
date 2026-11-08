@@ -6,6 +6,10 @@
 -- change since the previous survey. Missing years are not interpolated;
 -- there is simply no Philippine Gini before 1985 in this source.
 --
+-- The survey basis switches in 2000: consumption up to 1997, income from
+-- 2000 (World Bank PIP). The two are not comparable, so gini_change is left
+-- empty for the 2000 row instead of reporting a change across the switch.
+--
 -- If GDP per capita climbs while Gini refuses to fall, growth stayed at the
 -- top and "life got better" is not a clean yes.
 
@@ -24,7 +28,8 @@ SELECT
     year                                              AS survey_year,
     prev_year                                         AS previous_survey,
     ROUND(gini, 1)                                    AS gini,
-    ROUND(gini - prev_gini, 1)                        AS gini_change,
+    ROUND(CASE WHEN (year >= 2000) = (prev_year >= 2000)
+               THEN gini - prev_gini END, 1)          AS gini_change,
     ROUND(gdp_per_capita_const, 0)                    AS real_gdp_per_capita_usd2015,
     ROUND((gdp_per_capita_const / prev_gdp - 1) * 100, 1) AS real_gdp_change_pct
 FROM surveys
